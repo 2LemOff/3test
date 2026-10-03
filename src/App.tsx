@@ -6,6 +6,7 @@ import { useRoute } from "./router";
 const Lesson = lazy(() => import("./demos/lesson/Lesson").then((m) => ({ default: m.Lesson })));
 const Predict = lazy(() => import("./demos/predict/Predict").then((m) => ({ default: m.Predict })));
 const Film = lazy(() => import("./demos/film/Film").then((m) => ({ default: m.Film })));
+const Story = lazy(() => import("./demos/story/Story").then((m) => ({ default: m.Story })));
 const Flashcards = lazy(() =>
   import("./demos/flashcards/Flashcards").then((m) => ({ default: m.Flashcards })),
 );
@@ -20,6 +21,7 @@ export function App() {
   else if (route === "predict") page = <Predict />;
   else if (route === "flashcards") page = <Flashcards />;
   else if (route === "film") page = <Film />;
+  else if (route === "story") page = <Story />;
   else page = <Hub />;
   return (
     <Suspense fallback={<div style={{ padding: 24, color: "var(--fg-2)" }}>Loading the lab…</div>}>

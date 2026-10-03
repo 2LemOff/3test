@@ -8,7 +8,7 @@ const [base, outDir, routesArg = "home", ...flags] = process.argv.slice(2);
 const mobile = flags.includes("--mobile");
 const dark = flags.includes("--dark");
 const wait = Number(flags.find((f) => f.startsWith("--wait="))?.split("=")[1] ?? 6000);
-const query = flags.find((f) => f.startsWith("--query="))?.split("=")[1] ?? "";
+const query = flags.find((f) => f.startsWith("--query="))?.slice("--query=".length) ?? "";
 mkdirSync(outDir, { recursive: true });
 
 const browser = await chromium.launch({

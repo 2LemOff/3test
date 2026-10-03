@@ -14,6 +14,16 @@ export interface Entry {
 
 export const CATALOG: Entry[] = [
   {
+    id: "story",
+    title: "The story: all the demos in one sequence",
+    format: "Guided story",
+    blurb:
+      "Ten chapters that follow one thread: predict a cannonball, understand it, remember it, then fields, magnets, electrons, light and orbits.",
+    route: "story",
+    phase: 1,
+    thumb: "story",
+  },
+  {
     id: "fields",
     title: "3D fields and waves",
     format: "3D visualizer",

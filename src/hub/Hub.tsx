@@ -20,6 +20,9 @@ export function Hub() {
           Photoreal simulations you can change, with lessons, predictions and flashcards built
           around them. Every scene runs on exact physics, tested against known results.
         </p>
+        <button type="button" className="btn primary hub-cta" onClick={() => go("story")}>
+          Start the story: all the demos in one sequence
+        </button>
       </header>
       <section aria-labelledby="ready" className="hub-section">
         <h2 id="ready" className="eyebrow">

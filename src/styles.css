@@ -568,3 +568,123 @@ input[type="range"] {
   letter-spacing: 0.04em;
   text-transform: uppercase;
 }
+
+/* Story mode: one scene at a time, narration card over it */
+.story {
+  position: relative;
+  height: 100%;
+  min-height: 100%;
+  background: #0b0c0d;
+  overflow: hidden;
+}
+.story-stage {
+  position: absolute;
+  inset: 0;
+}
+.story-top {
+  position: absolute;
+  inset: 0 0 auto 0;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: calc(env(safe-area-inset-top, 0px) + 12px) 16px 12px;
+  z-index: 2;
+}
+.story-progress {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-auto-flow: column;
+  grid-auto-columns: 1fr;
+  gap: 4px;
+  flex: 1;
+  min-width: 0;
+}
+.story-progress button {
+  display: block;
+  width: 100%;
+  height: 20px;
+  padding: 8px 0;
+  background: none;
+  border: 0;
+  cursor: pointer;
+}
+.story-progress button::before {
+  content: "";
+  display: block;
+  height: 4px;
+  border-radius: 2px;
+  background: rgb(255 255 255 / 0.25);
+}
+.story-fill {
+  display: block;
+  height: 4px;
+  margin-top: -4px;
+  border-radius: 2px;
+  background: #f1f3f4;
+  transition: width 0.12s linear;
+}
+.story-progress button[aria-current="step"]::before {
+  background: rgb(255 255 255 / 0.4);
+}
+.story-card {
+  position: absolute;
+  left: 16px;
+  bottom: calc(env(safe-area-inset-bottom, 0px) + 16px);
+  width: min(430px, calc(100% - 32px));
+  max-height: calc(100% - 96px);
+  overflow-y: auto;
+  display: grid;
+  gap: 12px;
+  padding: 20px 22px;
+  border-radius: 14px;
+  background: color-mix(in srgb, var(--surface) 90%, transparent);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border: 1px solid var(--line);
+  box-shadow: var(--shadow);
+  z-index: 2;
+}
+.story-card h1 {
+  font-size: var(--step-2);
+  font-variation-settings: "wdth" 80;
+}
+.story-nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  align-items: center;
+}
+.story-try {
+  background: none;
+  border: 0;
+  padding: 6px 0;
+  color: var(--accent);
+  font-weight: 600;
+  cursor: pointer;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  width: 100%;
+  text-align: left;
+}
+.story-count {
+  color: var(--fg-3);
+  font-size: 12px;
+}
+@media (max-width: 860px) {
+  .story-card {
+    left: 8px;
+    right: 8px;
+    width: auto;
+    max-height: 52%;
+    padding: 16px;
+  }
+  .story-card h1 {
+    font-size: var(--step-1);
+  }
+}
+
+.hub-cta {
+  justify-self: start;
+}

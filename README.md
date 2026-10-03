@@ -6,6 +6,7 @@ Photoreal, interactive physics demonstrations for a learning app, built with Rea
 
 | Demo | Route | What it shows |
 |---|---|---|
+| Story | `#story` | All the demos in one guided sequence: ten chapters from a cannonball to an orbit, each with a live scene, narration and a link to the full demo. Autoplays; arrow keys and space work too |
 | 3D fields and waves | `#fields-electric`, `#fields-magnet`, `#fields-beam`, `#fields-waves`, `#fields-orbits` | Electric field lines between chrome spheres, 50,000 iron filings oriented by the graphics card, a fine-beam tube (Lorentz force), double slit and standing waves, a gravitational slingshot |
 | Guided lesson | `#lesson` | Lesson text beside a live cannon, questions generated from the scene, mastery per skill, PDF worksheet |
 | Predict, then watch | `#predict` | Sketch the path and the vᵧ–t graph, fire, get misconception feedback |
